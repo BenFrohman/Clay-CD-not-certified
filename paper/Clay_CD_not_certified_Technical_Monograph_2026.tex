@@ -1,0 +1,73 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+
+\title{\textbf{Clay-CD-not-certified: Zero-Sorry Lean 4 Audit Certificate Demonstrating Why Linear Enstrophy-History Growth Does Not Certify BKM Blowup}}
+\author{Benjamin Stanley Frohman\\
+\small ORCID: \href{https://orcid.org/0009-0006-7068-3718}{0009-0006-7068-3718} \quad|\quad
+GitHub: \href{https://github.com/BenFrohman/Clay-CD-not-certified}{\texttt{BenFrohman/Clay-CD-not-certified}}\\
+\small Dedicated 1-to-1 Zenodo DOI: \href{https://doi.org/10.5281/zenodo.23653015}{\texttt{10.5281/zenodo.23653015}}}
+\date{Earliest Commit Provenance: 2026-10-07 07:27:11 AM CDT (UTC-5)\\
+Siloed Archival Edition: October 25, 2026 (America/Chicago CDT)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Standalone zero-sorry Lean 4 negative audit certificate (`lean/NotBlowup.lean`) proving `bounded\_M\_keeps\_bkm\_finite` and `history\_can\_grow\_while\_bkm\_stays\_finite`: a bounded vorticity supremum M keeps the Beale-Kato-Majda integral int\_0\textasciicircum{}T M dt = M T finite on every finite interval [0, T] even while the quadratic enstrophy history integral int\_0\textasciicircum{}T M\textasciicircum{}2 dt = M\textasciicircum{}2 T grows linearly. Consequently, linear growth of the history clock does not certify finite-time blowup or resolve Fefferman Statements (C) or (D).
+\end{abstract}
+
+\section{Scope, Scientific Honesty, and Non-Claim Boundary}
+Negative audit certificate proving why a diverging quadratic history clock on [0, infty) is not a finite-time BKM blowup proof; explicitly declines to certify Fefferman (C) or (D).
+
+\begin{itemize}
+  \item \textbf{Repository:} \texttt{https://github.com/BenFrohman/Clay-CD-not-certified}
+  \item \textbf{Dedicated 1-to-1 Zenodo DOI:} \texttt{10.5281/zenodo.23653015}
+  \item \textbf{Earliest Git Commit SHA:} \texttt{bf14a32b0944c88da889ce99ceaee2901df53802} (2026-10-07 07:27:11 AM CDT (UTC-5))
+  \item \textbf{License \& Copyright:} Copyright \textcopyright\ 2026 Benjamin Stanley Frohman. Licensed under the Apache License, Version 2.0.
+\end{itemize}
+
+\section{Technical Overview \& Repository Specification}
+Author: Benjamin Stanley Frohman
+
+Copyright (c) 2026 Benjamin Stanley Frohman
+
+License: Apache License, Version 2.0
+
+This repository is not a resolution of Fefferman (C) or (D).
+
+A request to title a repository as a Clay C/D resolution, and to certify a zero-sorry blowup proof from the Section 10 argument, is declined. The Section 10 materials do not prove that the Beale–Kato–Majda integral diverges in finite time.
+
+Blowup in the BKM sense is divergence of ∫ ‖ω‖\_∞ dt. The 2D and steady-Euler kill switch has M bounded, so ∫\_0\textasciicircum{}T M dt = M T stays finite, while ∫ M² grows. That is the opposite of a blowup proof.
+
+Forced (C) and (D) are a different statement. An external claim exists in openai/NavierStokesAndEuler. This repository does not copy it and does not certify it.
+
+\section{Cryptographic Provenance \& File Inventory}
+Every source artifact in \texttt{BenFrohman/Clay-CD-not-certified} is audited via \texttt{titan-audit}
+(\texttt{audit/TITAN\_AUDIT\_CERTIFICATE.json}) and sealed under a deterministic SHA-256 Merkle tree via
+\texttt{sealguard} (\texttt{PROVENANCE\_MERKLE\_ROOT.json}) signed with Ed25519 key fingerprint
+\texttt{b428fb72676f1c52}.
+
+\begin{center}
+\small
+\begin{tabular}{p{0.52\textwidth}rr}
+\toprule
+\textbf{Repository Path} & \textbf{Size} & \textbf{SHA-256 Prefix} \\
+\midrule
+\texttt{LICENSE} & 11355 B & \texttt{9da72c2bee4f20ba...} \\
+\texttt{NOTICE} & 333 B & \texttt{c9c93bc0bf700801...} \\
+\texttt{README.md} & 819 B & \texttt{229b00a58e1bd3ef...} \\
+\texttt{lean/NotBlowup.lean} & 619 B & \texttt{a1e32fd19f20d0b3...} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vfill
+\noindent\rule{\textwidth}{0.4pt}\\
+\footnotesize
+\textbf{Attribution \& Licensing Notice:} Copyright \textcopyright\ 2026 Benjamin Stanley Frohman (ORCID: \texttt{0009-0006-7068-3718}).
+Licensed under the Apache License, Version 2.0.
+\end{document}

@@ -1,0 +1,23 @@
+{
+  "schema": "titan-audit-v1.0",
+  "repository": "BenFrohman/Clay-CD-not-certified",
+  "doi": "10.5281/zenodo.23653015",
+  "author": "Benjamin Stanley Frohman",
+  "orcid": "0009-0006-7068-3718",
+  "license": "Apache-2.0",
+  "timestamp_cdt": "2026-10-25T19:10:00-05:00",
+  "lean_module_count": 1,
+  "sorry_count": 0,
+  "modules": [
+    {
+      "file": "lean/NotBlowup.lean",
+      "sha256": "a1e32fd19f20d0b364ba9696ec7ad08419cb207b42d69574ba7235861697dbf9",
+      "declarations": 4,
+      "sorry_tokens": 0
+    }
+  ],
+  "verdict": "PASS_ZERO_SORRY_HONEST_BOUNDARY",
+  "payload_sha256": "036267784ae79f9fe4412c9c6fb6c089cb0a07033bec39ab0fa4c58d237c4a1f",
+  "ed25519_key_fingerprint": "b428fb72676f1c52",
+  "ed25519_signature": "365a8b5a04fac4ef3f5153fcef4f79663247c5193decc83177e73bec37ec17added3d301bedb87b5263ec5bd5bffc57fd5abffe49c22815e69ddd24d9fa0ff02"
+}

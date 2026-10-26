@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use or reference this repository, please cite it using the metadata below."
+title: "Clay-CD-not-certified: Zero-Sorry Lean 4 Audit Certificate Demonstrating Why Linear Enstrophy-History Growth Does Not Certify BKM Blowup"
+authors:
+  - family-names: "Frohman"
+    given-names: "Benjamin Stanley"
+    orcid: "https://orcid.org/0009-0006-7068-3718"
+doi: 10.5281/zenodo.23653015
+url: "https://github.com/BenFrohman/Clay-CD-not-certified"
+repository-code: "https://github.com/BenFrohman/Clay-CD-not-certified"
+license: Apache-2.0
+copyright: "Copyright (c) 2026 Benjamin Stanley Frohman"
+date-released: "2026-10-07"

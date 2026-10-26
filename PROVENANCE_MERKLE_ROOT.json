@@ -1,0 +1,65 @@
+{
+  "schema": "sealguard-merkle-provenance-v1.0",
+  "repository": "BenFrohman/Clay-CD-not-certified",
+  "doi": "10.5281/zenodo.23653015",
+  "author": "Benjamin Stanley Frohman",
+  "orcid": "0009-0006-7068-3718",
+  "license": "Apache-2.0",
+  "timestamp_cdt": "2026-10-25T19:10:00-05:00",
+  "merkle_root_sha256": "b993215629eb5f10f28759483e8b437a9731cead12ae9c9f1321d22059544aa8",
+  "ed25519_key_fingerprint": "b428fb72676f1c52",
+  "ed25519_signature": "7b1dd35fe1044cd5f7c27d46c879eaf062442df75af6574e5adb7a3780c4b1187ea8f044adecd35251b056e63af8c5b93472175bf92554b9e34b7007e1671907",
+  "leaf_count": 10,
+  "leaves": [
+    {
+      "path": ".zenodo.json",
+      "sha256": "06d08c5692fcbbbc9ec67a78285f851d2c72003d83ac574aa395377ac38fd428",
+      "bytes": 1511
+    },
+    {
+      "path": "AUTHORS.md",
+      "sha256": "1732529c9d516b14378c2ea60b7a29a9dd01385bb5f302efa163c42b3dceb130",
+      "bytes": 320
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "fd10d714b6294b88cf6baca7b9f888299c8ce7716caaeeaa232b4ffe815135ae",
+      "bytes": 646
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "ec43eec7417d548fb78a8dc50830f1d854b91a89c2daf0d4e957601515c15e87",
+      "bytes": 10773
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "3d38395549997c1f62a7c0eedc51720681b235a3987aa711b0c6f8b2a68910bd",
+      "bytes": 604
+    },
+    {
+      "path": "README.md",
+      "sha256": "bd000ebb9bdd8976daed2453e2ca6e475df7aab3615b8be5f0cea3d41773ceb0",
+      "bytes": 1940
+    },
+    {
+      "path": "audit/TITAN_AUDIT_CERTIFICATE.json",
+      "sha256": "6b3253b73ab234c3babe99efbfd43e160bb69aab213577f6b51b2d973ac3a67a",
+      "bytes": 860
+    },
+    {
+      "path": "lean/NotBlowup.lean",
+      "sha256": "a1e32fd19f20d0b364ba9696ec7ad08419cb207b42d69574ba7235861697dbf9",
+      "bytes": 619
+    },
+    {
+      "path": "paper/Clay_CD_not_certified_Technical_Monograph_2026.pdf",
+      "sha256": "0b9bdc3f31566da3e107edafa53de68c2029876e899a796f81e60f8c475a33b8",
+      "bytes": 47687
+    },
+    {
+      "path": "paper/Clay_CD_not_certified_Technical_Monograph_2026.tex",
+      "sha256": "4786e90e4a9321d47b64abfe84a029c8c35897ac03c50ea331c10ad8d6c524d6",
+      "bytes": 4193
+    }
+  ]
+}

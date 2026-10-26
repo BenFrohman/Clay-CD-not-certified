@@ -1,0 +1,13 @@
+{
+  "schema": "sealguard-manifest-v1.0",
+  "repository": "BenFrohman/Clay-CD-not-certified",
+  "doi": "10.5281/zenodo.23653015",
+  "author": "Benjamin Stanley Frohman",
+  "orcid": "0009-0006-7068-3718",
+  "license": "Apache-2.0",
+  "public_surface_policy": "VERIFIED_PUBLIC_SURFACE_ONLY",
+  "classified_ip_redaction": "ACTIVE_ZERO_LEAKAGE",
+  "merkle_root_sha256": "b993215629eb5f10f28759483e8b437a9731cead12ae9c9f1321d22059544aa8",
+  "ed25519_key_fingerprint": "b428fb72676f1c52",
+  "ed25519_signature": "7b1dd35fe1044cd5f7c27d46c879eaf062442df75af6574e5adb7a3780c4b1187ea8f044adecd35251b056e63af8c5b93472175bf92554b9e34b7007e1671907"
+}
