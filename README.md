@@ -17,10 +17,31 @@ Forced (C) and (D) are a different statement. An external claim exists in openai
 ---
 ## Archival DOI & Cryptographic Provenance
 
-- **Dedicated 1-to-1 Zenodo DOI:** [10.5281/zenodo.23653015](https://doi.org/10.5281/zenodo.23653015)
+- **Zenodo DOI (v1.0.0):** [10.5281/zenodo.23653015](https://doi.org/10.5281/zenodo.23653015)
 - **Author:** Benjamin Stanley Frohman (ORCID: [0009-0006-7068-3718](https://orcid.org/0009-0006-7068-3718))
 - **License:** Apache License, Version 2.0 (`Copyright (c) 2026 Benjamin Stanley Frohman`)
 - **Earliest Commit Provenance:** `bf14a32b0944c88da889ce99ceaee2901df53802` (2026-10-07 07:27:11 AM CDT (UTC-5))
-- **SealGuard SHA-256 Merkle Root:** `b993215629eb5f10f28759483e8b437a9731cead12ae9c9f1321d22059544aa8` (`PROVENANCE_MERKLE_ROOT.json`)
-- **Titan Audit Certificate:** `audit/TITAN_AUDIT_CERTIFICATE.json` (Ed25519 key `b428fb72676f1c52`)
-- **Scope & Scientific Boundary:** Negative audit certificate proving why a diverging quadratic history clock on [0, infty) is not a finite-time BKM blowup proof; explicitly declines to certify Fefferman (C) or (D).
+- **Provenance hashes:** SHA-256 Merkle root `b993215629eb5f10f28759483e8b437a9731cead12ae9c9f1321d22059544aa8` (`provenance/PROVENANCE_MERKLE_ROOT.json`) and per-file hashes (`provenance/PROVENANCE_HASHES.json`, Ed25519 key `b428fb72676f1c52`). Integrity fingerprints only, not a certificate of correctness or review.
+- **Scope:** A worked illustration of why a diverging quadratic history clock on [0, infty) is not a finite-time BKM blowup proof; explicitly declines to certify Fefferman (C) or (D).
+
+## Status summary
+
+**Proved** (`lean/NotBlowup.lean`, standard axioms only; see `AXIOMS.md`): two definitional identities,
+`bounded_M_keeps_bkm_finite` and `history_can_grow_while_bkm_stays_finite`, each closed by `rfl`. With `M` constant,
+the modelled BKM integral `M * T` is finite while the modelled history `M * M * T` grows linearly in `T`.
+They are arithmetic about the model definitions, not statements about Navier–Stokes solutions.
+
+**Conditional on:** nothing (no hypotheses).
+
+**Open / not addressed:** Fefferman (C) and (D), and every regularity or blow-up statement for Navier–Stokes.
+Nothing here has been peer reviewed.
+
+## Build
+
+```
+cd lean
+lake exe cache get
+lake build
+lake env lean AxiomReport.lean
+```
+CI (`.github/workflows/lean.yml`) runs these and fails on `sorryAx` or any non-standard axiom.

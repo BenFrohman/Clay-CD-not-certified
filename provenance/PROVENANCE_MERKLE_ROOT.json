@@ -42,7 +42,7 @@
       "bytes": 1940
     },
     {
-      "path": "audit/TITAN_AUDIT_CERTIFICATE.json",
+      "path": "provenance/PROVENANCE_HASHES.json",
       "sha256": "6b3253b73ab234c3babe99efbfd43e160bb69aab213577f6b51b2d973ac3a67a",
       "bytes": 860
     },

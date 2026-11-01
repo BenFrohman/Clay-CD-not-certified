@@ -1,7 +1,7 @@
 {
-  "title": "Clay-CD-not-certified: Zero-Sorry Lean 4 Audit Certificate Demonstrating Why Linear Enstrophy-History Growth Does Not Certify BKM Blowup",
+  "title": "Clay-CD-not-certified: A Lean 4 Illustration of Why Linear Enstrophy-History Growth Does Not Imply BKM Blowup",
   "upload_type": "software",
-  "description": "Standalone zero-sorry Lean 4 negative audit certificate (`lean/NotBlowup.lean`) proving `bounded_M_keeps_bkm_finite` and `history_can_grow_while_bkm_stays_finite`: a bounded vorticity supremum M keeps the Beale-Kato-Majda integral int_0^T M dt = M T finite on every finite interval [0, T] even while the quadratic enstrophy history integral int_0^T M^2 dt = M^2 T grows linearly. Consequently, linear growth of the history clock does not certify finite-time blowup or resolve Fefferman Statements (C) or (D). Negative audit certificate proving why a diverging quadratic history clock on [0, infty) is not a finite-time BKM blowup proof; explicitly declines to certify Fefferman (C) or (D). Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under the Apache License, Version 2.0.",
+  "description": "Standalone Lean 4 illustration (`lean/NotBlowup.lean`) proving `bounded_M_keeps_bkm_finite` and `history_can_grow_while_bkm_stays_finite`: a bounded vorticity supremum M keeps the Beale-Kato-Majda integral int_0^T M dt = M T finite on every finite interval [0, T] even while the quadratic enstrophy history integral int_0^T M^2 dt = M^2 T grows linearly. Consequently, linear growth of the history clock does not certify finite-time blowup or resolve Fefferman Statements (C) or (D). Worked illustration of why a diverging quadratic history clock on [0, infty) is not a finite-time BKM blowup proof; explicitly declines to certify Fefferman (C) or (D). Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under the Apache License, Version 2.0.",
   "creators": [
     {
       "name": "Frohman, Benjamin Stanley",

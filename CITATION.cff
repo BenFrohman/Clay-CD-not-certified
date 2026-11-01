@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use or reference this repository, please cite it using the metadata below."
-title: "Clay-CD-not-certified: Zero-Sorry Lean 4 Audit Certificate Demonstrating Why Linear Enstrophy-History Growth Does Not Certify BKM Blowup"
+title: "Clay-CD-not-certified: A Lean 4 Illustration of Why Linear Enstrophy-History Growth Does Not Imply BKM Blowup"
 authors:
   - family-names: "Frohman"
     given-names: "Benjamin Stanley"

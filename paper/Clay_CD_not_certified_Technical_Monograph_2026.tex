@@ -5,7 +5,7 @@
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
 
-\title{\textbf{Clay-CD-not-certified: Zero-Sorry Lean 4 Audit Certificate Demonstrating Why Linear Enstrophy-History Growth Does Not Certify BKM Blowup}}
+\title{\textbf{Clay-CD-not-certified: A Lean 4 Illustration of Why Linear Enstrophy-History Growth Does Not Imply BKM Blowup}}
 \author{Benjamin Stanley Frohman\\
 \small ORCID: \href{https://orcid.org/0009-0006-7068-3718}{0009-0006-7068-3718} \quad|\quad
 GitHub: \href{https://github.com/BenFrohman/Clay-CD-not-certified}{\texttt{BenFrohman/Clay-CD-not-certified}}\\
@@ -17,11 +17,11 @@ Siloed Archival Edition: October 25, 2026 (America/Chicago CDT)}
 \maketitle
 
 \begin{abstract}
-Standalone zero-sorry Lean 4 negative audit certificate (`lean/NotBlowup.lean`) proving `bounded\_M\_keeps\_bkm\_finite` and `history\_can\_grow\_while\_bkm\_stays\_finite`: a bounded vorticity supremum M keeps the Beale-Kato-Majda integral int\_0\textasciicircum{}T M dt = M T finite on every finite interval [0, T] even while the quadratic enstrophy history integral int\_0\textasciicircum{}T M\textasciicircum{}2 dt = M\textasciicircum{}2 T grows linearly. Consequently, linear growth of the history clock does not certify finite-time blowup or resolve Fefferman Statements (C) or (D).
+Standalone Lean 4 illustration (`lean/NotBlowup.lean`) proving `bounded\_M\_keeps\_bkm\_finite` and `history\_can\_grow\_while\_bkm\_stays\_finite`: a bounded vorticity supremum M keeps the Beale-Kato-Majda integral int\_0\textasciicircum{}T M dt = M T finite on every finite interval [0, T] even while the quadratic enstrophy history integral int\_0\textasciicircum{}T M\textasciicircum{}2 dt = M\textasciicircum{}2 T grows linearly. Consequently, linear growth of the history clock does not certify finite-time blowup or resolve Fefferman Statements (C) or (D).
 \end{abstract}
 
 \section{Scope, Scientific Honesty, and Non-Claim Boundary}
-Negative audit certificate proving why a diverging quadratic history clock on [0, infty) is not a finite-time BKM blowup proof; explicitly declines to certify Fefferman (C) or (D).
+Worked illustration of why a diverging quadratic history clock on [0, infty) is not a finite-time BKM blowup proof; explicitly declines to certify Fefferman (C) or (D).
 
 \begin{itemize}
   \item \textbf{Repository:} \texttt{https://github.com/BenFrohman/Clay-CD-not-certified}
@@ -46,8 +46,8 @@ Blowup in the BKM sense is divergence of ∫ ‖ω‖\_∞ dt. The 2D and steady
 Forced (C) and (D) are a different statement. An external claim exists in openai/NavierStokesAndEuler. This repository does not copy it and does not certify it.
 
 \section{Cryptographic Provenance \& File Inventory}
-Every source artifact in \texttt{BenFrohman/Clay-CD-not-certified} is audited via \texttt{titan-audit}
-(\texttt{audit/TITAN\_AUDIT\_CERTIFICATE.json}) and sealed under a deterministic SHA-256 Merkle tree via
+Every source artifact in \texttt{BenFrohman/Clay-CD-not-certified} is hashed via \texttt{titan-audit}
+(provenance hashes, \texttt{provenance/PROVENANCE\_HASHES.json}; integrity fingerprints, not a certificate of correctness) and sealed under a deterministic SHA-256 Merkle tree via
 \texttt{sealguard} (\texttt{PROVENANCE\_MERKLE\_ROOT.json}) signed with Ed25519 key fingerprint
 \texttt{b428fb72676f1c52}.
 
