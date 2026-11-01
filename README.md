@@ -45,3 +45,6 @@ lake build
 lake env lean AxiomReport.lean
 ```
 CI (`.github/workflows/lean.yml`) runs these and fails on `sorryAx` or any non-standard axiom.
+
+
+**PDF note:** the PDF in `paper/` predates the 2026-11-01 revision of the `.tex` source (no TeX toolchain was available when this revision was made). The `.tex` file is authoritative; rebuild the PDF from it.
