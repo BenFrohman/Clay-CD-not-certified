@@ -26,15 +26,16 @@ Forced (C) and (D) are a different statement. An external claim exists in openai
 
 ## Status summary
 
-**Proved** (`lean/NotBlowup.lean`, standard axioms only; see `AXIOMS.md`): two definitional identities,
-`bounded_M_keeps_bkm_finite` and `history_can_grow_while_bkm_stays_finite`, each closed by `rfl`. With `M` constant,
-the modelled BKM integral `M * T` is finite while the modelled history `M * M * T` grows linearly in `T`.
-They are arithmetic about the model definitions, not statements about Navier–Stokes solutions.
+**Mathematical results proved here: none.** `lean/NotBlowup.lean` contains two Lean statements,
+`bounded_M_keeps_bkm_finite` and `history_can_grow_while_bkm_stays_finite`, each closed by `rfl` (standard axioms only;
+see `AXIOMS.md`). They are definitional unfoldings of the model functions (with `M` constant, `M * T` versus
+`M * M * T`), included as a worked illustration. They are **not counted as mathematical results** and say nothing
+about Navier–Stokes solutions.
 
 **Conditional on:** nothing (no hypotheses).
 
 **Open / not addressed:** Fefferman (C) and (D), and every regularity or blow-up statement for Navier–Stokes.
-Nothing here has been peer reviewed.
+Nothing here has been peer reviewed. Naming: [`NAMING.md`](NAMING.md).
 
 ## Build
 
@@ -47,4 +48,4 @@ lake env lean AxiomReport.lean
 CI (`.github/workflows/lean.yml`) runs these and fails on `sorryAx` or any non-standard axiom.
 
 
-**PDF note:** the PDF in `paper/` predates the 2026-11-01 revision of the `.tex` source (no TeX toolchain was available when this revision was made). The `.tex` file is authoritative; rebuild the PDF from it.
+**PDF note:** the PDFs were rebuilt from the `.tex` sources with Tectonic 0.17.0 on 2026-11-02.
