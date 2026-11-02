@@ -46,7 +46,7 @@ Blowup in the BKM sense is divergence of $\int\|\omega\|_\infty\,dt$. In the 2D 
 Forced (C) and (D) are a different statement. An external claim exists in openai/NavierStokesAndEuler. This repository does not copy it and does not certify it.
 
 \section{Build and axiom status}
-\textbf{Proved (kernel-checked).} \texttt{lake build} of the \texttt{NotBlowup} library (Lean v4.30.0-rc1, Mathlib) succeeds. The axiom report (\texttt{lean/AxiomReport.lean}, output in \texttt{AXIOMS.md}) lists 2 theorems, \texttt{bounded\_M\_keeps\_bkm\_finite} and \texttt{history\_can\_grow\_while\_bkm\_stays\_finite}, with no \texttt{sorryAx} and no axiom beyond \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}. Both are definitional identities.
+\textbf{Proved (kernel-checked).} \texttt{lake build} of the \texttt{NotBlowup} library (Lean v4.30.0-rc1, Mathlib) succeeds. The axiom report (\texttt{lean/AxiomReport.lean}, output in \texttt{AXIOMS.md}) lists 2 theorems, \texttt{bounded\_M\_keeps\_bkm\_finite} and \texttt{history\_can\_grow\_while\_bkm\_stays\_finite}, with no \texttt{sorryAx} and no axiom beyond \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}. Both are definitional identities closed by \texttt{rfl}; they are illustrations, not mathematical results, and this record contains no mathematical theorem about Navier--Stokes.
 
 \textbf{Conditional on.} Nothing; there are no hypotheses.
 
