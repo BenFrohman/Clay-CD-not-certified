@@ -1,7 +1,7 @@
 {
-  "title": "Constant Vorticity Bounds, the BKM Integral, and Quadratic History Growth: Two Definitional Identities Checked in Lean 4",
-  "upload_type": "software",
-  "description": "Lean 4 + Mathlib (v4.30.0-rc1) note: with bkmIntegral M T := M*T and history M T := M*M*T, two theorems hold by rfl, illustrating that under a constant vorticity bound the BKM integral MT is finite while the quadratic history M^2 T grows linearly. No Navier-Stokes equations, integrals or blow-up criterion are formalized; no claim toward Fefferman (C) or (D). 2 theorems, no sorry, standard axioms only. The attached paper states exactly these results.",
+  "title": "A Diverging History Clock Is Not a Blow-up Proof: Lean-Checked Lemmas Showing Why a Section 10 Navier-Stokes Argument Does Not Certify Fefferman (C) or (D)",
+  "upload_type": "publication",
+  "description": "Negative-result note; no claim toward the Clay Millennium problem. Explains why a 'quadratic history clock' diverging as T to infinity does not certify finite-time blow-up (Fefferman C/D), and checks the scalar real-analysis facts in Lean 4 + Mathlib: bound gives int f <= MT; int f <= (T + int f^2)/2; constant-M history diverges at infinity while BKM integral MT is finite; (T*-t)^-1 and its square not integrable on [0,T*]. 8 theorems, no sorry, standard axioms only. No Navier-Stokes equations or BKM theorem formalized.",
   "creators": [
     {
       "name": "Frohman, Benjamin Stanley",
@@ -20,10 +20,11 @@
   "related_identifiers": [
     {
       "identifier": "https://github.com/BenFrohman/Clay-CD-not-certified",
-      "relation": "isSupplementTo",
+      "relation": "isSupplementedBy",
       "scheme": "url"
     }
   ],
-  "version": "1.1.0",
-  "publication_date": "2026-11-04"
+  "version": "2.0.0",
+  "publication_date": "2026-11-04",
+  "publication_type": "preprint"
 }

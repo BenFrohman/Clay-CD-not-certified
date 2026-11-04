@@ -1,6 +1,7 @@
 # Clay-CD-not-certified
 
 [![Lean build and axiom audit (print-axioms table)](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/axiom-table.yml/badge.svg?branch=main)](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/axiom-table.yml)
+[![Paper PDF](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/paper.yml/badge.svg?branch=main)](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/paper.yml)
 [![Lean 4](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/lean.yml)
 
 
@@ -28,17 +29,19 @@ Forced (C) and (D) are a different statement. An external claim exists in openai
 - **Provenance hashes:** SHA-256 Merkle root `b993215629eb5f10f28759483e8b437a9731cead12ae9c9f1321d22059544aa8` (`provenance/PROVENANCE_MERKLE_ROOT.json`) and per-file hashes (`provenance/PROVENANCE_HASHES.json`, Ed25519 key `b428fb72676f1c52`). Integrity fingerprints only, not a certificate of correctness or review.
 - **Scope:** A worked illustration of why a diverging quadratic history clock on [0, infty) is not a finite-time BKM blowup proof; explicitly declines to certify Fefferman (C) or (D).
 
-## Status summary
+## Status summary (v2.0.0)
 
-**Mathematical results proved here: none.** `lean/NotBlowup.lean` contains two Lean statements,
-`bounded_M_keeps_bkm_finite` and `history_can_grow_while_bkm_stays_finite`, each closed by `rfl` (standard axioms only;
-see `AXIOMS.md`). They are definitional unfoldings of the model functions (with `M` constant, `M * T` versus
-`M * M * T`), included as a worked illustration. They are **not counted as mathematical results** and say nothing
-about Navier–Stokes solutions.
+**Paper:** *A Diverging History Clock Is Not a Blow-up Proof: Lean-Checked Lemmas Showing Why a Section 10 Navier-Stokes Argument Does Not Certify Fefferman (C) or (D)* — [`paper/Clay_CD_not_certified_2026.pdf`](paper/Clay_CD_not_certified_2026.pdf).
 
-**Conditional on:** nothing (no hypotheses).
+**Proved in Lean (8 theorems, no `sorry`, standard axioms only; see `AXIOMS.md`):** scalar real-analysis facts in
+`lean/BKMCalculus.lean` — a pointwise bound gives `∫₀ᵀ f ≤ M·T`; `∫₀ᵀ f ≤ (T + ∫₀ᵀ f²)/2`, so a quadratic history
+finite on bounded intervals cannot witness finite-time BKM divergence; for constant `M ≠ 0` the history `∫₀ᵀ M²` tends to
+`+∞` as `T → ∞` while `∫₀ᵀ M = M·T`; and `(T*−t)⁻¹` and its square are not integrable on `[0,T*]`. Plus the two
+`rfl` identities from v1 in `lean/NotBlowup.lean`.
 
-**Open / not addressed:** Fefferman (C) and (D), and every regularity or blow-up statement for Navier–Stokes.
+**Not formalized:** Navier–Stokes/Euler equations, vorticity fields, the BKM theorem itself (cited).
+
+**Open / not addressed:** Fefferman (C) and (D) and every regularity or blow-up statement for Navier–Stokes.
 Nothing here has been peer reviewed. Naming: [`NAMING.md`](NAMING.md).
 
 ## Build
@@ -48,8 +51,9 @@ cd lean
 lake exe cache get
 lake build
 lake env lean AxiomReport.lean
+lake env lean AxiomAudit.lean
 ```
 CI (`.github/workflows/lean.yml`) runs these and fails on `sorryAx` or any non-standard axiom.
 
 
-**PDF note:** the PDFs were rebuilt from the `.tex` sources with Tectonic 0.17.0 on 2026-11-02.
+**PDF note:** the PDF is built from `paper/Clay_CD_not_certified_2026.tex` with Tectonic (CI: `.github/workflows/paper.yml`).

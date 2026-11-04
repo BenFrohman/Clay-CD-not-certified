@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use or reference this repository, please cite it using the metadata below."
-title: "Constant Vorticity Bounds, the BKM Integral, and Quadratic History Growth: Two Definitional Identities Checked in Lean 4"
+title: "A Diverging History Clock Is Not a Blow-up Proof: Lean-Checked Lemmas Showing Why a Section 10 Navier-Stokes Argument Does Not Certify Fefferman (C) or (D)"
 authors:
   - family-names: Frohman
     given-names: "Benjamin Stanley"
@@ -12,4 +12,4 @@ repository-code: "https://github.com/BenFrohman/Clay-CD-not-certified"
 license: Apache-2.0
 copyright: "Copyright (c) 2026 Benjamin Stanley Frohman"
 date-released: "2026-11-04"
-version: "1.1.0"
+version: "2.0.0"

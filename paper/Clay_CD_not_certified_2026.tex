@@ -1,0 +1,118 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{longtable,booktabs,array}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\lean}[1]{\path{#1}}
+\sloppy
+
+\title[A history clock is not a BKM blow-up proof]{A Diverging History Clock Is Not a Blow-up Proof: Lean-Checked Lemmas Showing Why a Section~10 Navier--Stokes Argument Does Not Certify Fefferman (C) or (D)}
+\author{Benjamin Stanley Frohman}
+\email{frohmanbenjamin@gmail.com}
+\date{November 4, 2026. Version 2.0.0. Concept DOI (all versions): \href{https://doi.org/10.5281/zenodo.23653014}{10.5281/zenodo.23653014}. Repository: \url{https://github.com/BenFrohman/Clay-CD-not-certified}}
+\begin{document}
+\begin{abstract}
+This is a negative-result note. It does \emph{not} solve, and makes no claim toward, the Clay Millennium Navier--Stokes problem. An earlier argument (its ``Section~10'') was proposed as a certificate of finite-time blow-up, i.e.\ of Fefferman's statements (C) or (D). The argument used a ``quadratic history clock'' $\int_0^T\|\omega\|_\infty^2\,dt$ that diverges as $T\to\infty$. We explain exactly why this does not imply blow-up and machine-check the scalar real-analysis facts behind that explanation in Lean~4 with Mathlib. The facts are: (i) a pointwise bound $f\le M$ on $[0,T]$ gives $\int_0^T f\le MT$; (ii) for any $f$ with $f$ and $f^2$ integrable on $[0,T]$, $\int_0^T f\le \tfrac12\bigl(T+\int_0^T f^2\bigr)$, so a quadratic history that is finite on bounded intervals can never witness divergence of the Beale--Kato--Majda (BKM) integral at a finite time; (iii) for a constant bound $M\ne0$ the history $\int_0^T M^2$ tends to $+\infty$ as $T\to\infty$, while $\int_0^T M=MT$ for every finite $T$; (iv) the model profile $(T^*-t)^{-1}$ and its square are not integrable on $[0,T^*]$, which is what genuine finite-time BKM divergence looks like. There are eight theorems in all, with no \texttt{sorry}, using only Lean's standard axioms. No Navier--Stokes equation, vorticity field or BKM theorem is formalized. The BKM criterion is cited, not proved.
+\end{abstract}
+\maketitle
+
+\section{The problem statement that was attempted}
+Fefferman's official formulation \cite{fefferman} of the Navier--Stokes Millennium problem has four alternatives. (A) and (B) assert global smooth solutions on $\mathbb{R}^3$ and $\mathbb{T}^3$. (C) and (D) assert breakdown: there exist smooth, suitably decaying (resp.\ periodic) data, and a smooth force for (C)/(D) as stated, for which no global smooth solution exists. A proof of (C) or (D) must therefore exhibit a solution whose smoothness is lost at some \emph{finite} time $T^*$. By Beale--Kato--Majda \cite{bkm}, if $T^*<\infty$ is maximal then
+\[
+\int_0^{T^*}\|\omega(t)\|_{L^\infty}\,dt=\infty .
+\]
+So a blow-up certificate must show that the BKM integral diverges on a \emph{bounded} interval.
+
+The Section~10 materials instead analysed a regime (2D or steady-Euler ``kill switch'') in which $M(t):=\|\omega(t)\|_\infty$ stays bounded, and observed that a quadratic history $H(T)=\int_0^T M^2\,dt$ grows without bound as $T\to\infty$. A request to title the repository as a resolution of (C)/(D) and to certify that argument as a zero-\texttt{sorry} proof was declined. This note records why, with the reasons machine-checked.
+
+\section{What is formally verified}
+Throughout, $f:\mathbb{R}\to\mathbb{R}$ is an arbitrary real function of time standing in for $t\mapsto\|\omega(t)\|_\infty$; integrals are Lebesgue interval integrals in Mathlib. File \lean{lean/BKMCalculus.lean}, namespace \lean{ClayCD.BKMCalculus}.
+
+\begin{theorem}[\lean{bkm_integral_le_of_bound}]\label{t:bound}
+If $0\le T$, $f$ is integrable on $[0,T]$ and $f(t)\le M$ for $t\in[0,T]$, then $\int_0^T f\le MT$.
+\end{theorem}
+Hence in the bounded kill-switch regime the BKM integral is finite on every bounded interval, and BKM gives \emph{continuation}, the opposite of blow-up.
+
+\begin{lemma}[\lean{le_half_one_add_sq}]
+For all real $x$, $x\le\tfrac12(1+x^2)$.
+\end{lemma}
+
+\begin{theorem}[\lean{bkm_integral_le_of_history}]\label{t:hist}
+If $0\le T$ and $f$, $f^2$ are integrable on $[0,T]$, then
+$\int_0^T f\le \tfrac12\bigl(T+\int_0^T f^2\bigr)$.
+\end{theorem}
+This is the central negative result. If the history clock $H$ is finite at every finite time, as it is in the Section~10 regime, then the BKM integral is finite at every finite time. A history clock can detect a finite-time singularity only if it is \emph{itself} infinite on a bounded interval. Divergence ``at $T=\infty$'' carries no information about (C) or (D).
+
+\begin{theorem}[\lean{history_diverges_at_infinity_bkm_finite}]\label{t:inf}
+For $M\ne0$: $T\mapsto\int_0^T M^2\,dt$ tends to $+\infty$ as $T\to\infty$, and $\int_0^T M\,dt=MT$ for every $T$.
+\end{theorem}
+This is the explicit counterexample to the inference ``$H(T)\to\infty\Rightarrow$ blow-up''. It comes from a bounded, constant $M$, which BKM continues globally.
+
+\begin{theorem}[\lean{blowup_profile_not_integrable}, \lean{blowup_profile_sq_not_integrable}]\label{t:prof}
+For $T^*>0$, neither $t\mapsto(T^*-t)^{-1}$ nor $t\mapsto(T^*-t)^{-2}$ is integrable on $[0,T^*]$.
+\end{theorem}
+This is the shape a genuine certificate would need. The second statement is derived from the first using the pointwise bound $|g|\le\tfrac12(1+g^2)$, the same mechanism as Theorem~\ref{t:hist}.
+
+The original two definitional identities of version 1 are retained in \lean{lean/NotBlowup.lean} (\lean{bounded_M_keeps_bkm_finite}, \lean{history_can_grow_while_bkm_stays_finite}). They hold by \texttt{rfl} and are subsumed by Theorems~\ref{t:bound} and~\ref{t:inf}, which work with actual integrals.
+
+\section{The precise gap: why this is not a Clay certificate}
+\begin{enumerate}
+\item \textbf{Wrong time scale.} (C)/(D) need divergence on $[0,T^*]$ with $T^*<\infty$. The Section~10 quantity diverges only as $T\to\infty$ (Theorems~\ref{t:hist},~\ref{t:inf}).
+\item \textbf{Wrong direction.} Bounded $M$ is exactly the hypothesis under which BKM \emph{continues} solutions (Theorem~\ref{t:bound}).
+\item \textbf{Wrong dimension/regime.} The 2D and steady-Euler regimes are globally regular classically, so they cannot carry a counterexample to 3D regularity.
+\item \textbf{Nothing about PDE is formalized.} No equation, solution, function space or BKM theorem appears in the Lean code. The lemmas are scalar calculus. Their relevance to Navier--Stokes passes through the \emph{cited} BKM theorem.
+\item \textbf{Forced (C)/(D) claims elsewhere.} An external claim exists in \texttt{openai/NavierStokesAndEuler}. It is neither copied nor certified here.
+\end{enumerate}
+
+\section{Lessons and negative results}
+\begin{itemize}
+\item A monotone ``clock'' functional that is finite at every finite time is not a blow-up witness. Theorem~\ref{t:hist} turns this into a one-line test: check whether the clock can be infinite on a \emph{bounded} interval.
+\item Formalizing closed forms by definition (version 1) checks nothing. Lemmas about real integrals (version 2) at least check the calculus that the argument relies on.
+\item An axiom audit certifies only that the stated theorems follow from standard axioms. It says nothing about whether the prose reading is the intended one.
+\end{itemize}
+
+\section{Correspondence and reproducibility}
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Claim & Lean declaration (\lean{ClayCD.BKMCalculus.*})\\
+\midrule
+Theorem~\ref{t:bound} & \lean{bkm_integral_le_of_bound}\\
+Lemma & \lean{le_half_one_add_sq}\\
+Theorem~\ref{t:hist} & \lean{bkm_integral_le_of_history}\\
+Theorem~\ref{t:inf} & \lean{history_diverges_at_infinity_bkm_finite}\\
+Theorem~\ref{t:prof} & \lean{blowup_profile_not_integrable}, \lean{blowup_profile_sq_not_integrable}\\
+\bottomrule
+\end{tabular}
+\end{center}
+Toolchain \texttt{leanprover/lean4:v4.30.0-rc1}, Mathlib \texttt{v4.30.0-rc1} (commit \texttt{0c154d67}). To reproduce: \texttt{cd lean \&\& lake exe cache get \&\& lake build \&\& lake env lean AxiomAudit.lean}. CI rebuilds on every push, fails on \texttt{sorryAx}, on any nonstandard axiom, or on any \texttt{sorry}/\texttt{admit}/\texttt{native\_decide}/\texttt{axiom} in source, and builds this PDF.
+
+\subsection*{Axiom audit} Verbatim \texttt{\#print axioms} output: every one of the 8 theorems depends on exactly \texttt{[propext, Classical.choice, Quot.sound]}.
+{\footnotesize
+\begin{longtable}{p{0.62\linewidth}p{0.32\linewidth}}
+\hline Declaration & Axioms\\ \hline\endhead
+\path{ClayCD.NotBlowup.bounded_M_keeps_bkm_finite} & standard three\\
+\path{ClayCD.NotBlowup.history_can_grow_while_bkm_stays_finite} & standard three\\
+\path{ClayCD.BKMCalculus.bkm_integral_le_of_bound} & standard three\\
+\path{ClayCD.BKMCalculus.le_half_one_add_sq} & standard three\\
+\path{ClayCD.BKMCalculus.bkm_integral_le_of_history} & standard three\\
+\path{ClayCD.BKMCalculus.history_diverges_at_infinity_bkm_finite} & standard three\\
+\path{ClayCD.BKMCalculus.blowup_profile_not_integrable} & standard three\\
+\path{ClayCD.BKMCalculus.blowup_profile_sq_not_integrable} & standard three\\ \hline
+\end{longtable}}
+Nothing here has been peer reviewed.
+
+\begin{thebibliography}{9}
+\bibitem{bkm} J.~T.~Beale, T.~Kato, A.~Majda, \emph{Remarks on the breakdown of smooth solutions for the 3-D Euler equations}, Comm.\ Math.\ Phys.\ \textbf{94} (1984), 61--66.
+\bibitem{fefferman} C.~L.~Fefferman, \emph{Existence and smoothness of the Navier--Stokes equation}, in: The Millennium Prize Problems, Clay Math.\ Inst.\ (2006), 57--67.
+\end{thebibliography}
+\end{document}
