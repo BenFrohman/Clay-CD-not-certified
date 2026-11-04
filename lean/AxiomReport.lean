@@ -7,6 +7,7 @@ propext, Classical.choice, Quot.sound (for example `sorryAx`).
 -/
 import Lean
 import NotBlowup
+import BKMCalculus
 
 open Lean Elab Command
 
@@ -19,7 +20,7 @@ open Lean Elab Command
   for (n, ci) in env.constants.toList do
     let some idx := env.getModuleIdxFor? n | continue
     let mod := env.header.moduleNames[idx.toNat]!
-    unless (`NotBlowup).isPrefixOf mod do continue
+    unless (`NotBlowup).isPrefixOf mod || (`BKMCalculus).isPrefixOf mod do continue
     if n.isInternal then continue
     nDecl := nDecl + 1
     let axs ← liftCoreM (Lean.collectAxioms n)
@@ -30,6 +31,6 @@ open Lean Elab Command
       rows := rows.push s!"AXROW | `{n}` | `{mod}` | {if ax.isEmpty then "(none)" else ax} |"
   for r in rows.qsort (· < ·) do
     logInfo r
-  logInfo s!"AXSUMMARY {rows.size} theorems, {nDecl} declarations in NotBlowup; nonstandard: {bad.size}"
+  logInfo s!"AXSUMMARY {rows.size} theorems, {nDecl} declarations in NotBlowup+BKMCalculus; nonstandard: {bad.size}"
   unless bad.isEmpty do
     throwError m!"AxiomReport FAIL:\n{"\n".intercalate bad.toList}"

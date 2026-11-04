@@ -1,0 +1,20 @@
+name: Paper PDF
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Tectonic
+        run: |
+          curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net | sh
+          sudo mv tectonic /usr/local/bin/
+      - name: Build PDF
+        run: cd paper && tectonic -X compile Clay_CD_not_certified_2026.tex
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper-pdf
+          path: paper/Clay_CD_not_certified_2026.pdf
