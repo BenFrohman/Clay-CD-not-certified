@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: "If you use or reference this repository, please cite it using the metadata below."
-title: "A Diverging History Clock Is Not a Blow-up Proof: Lean-Checked Lemmas Showing Why a Section 10 Navier-Stokes Argument Does Not Certify Fefferman (C) or (D)"
+title: "A Diverging History Clock Is Not a Blow-up Proof: Lean-Checked Lemmas Showing Why a Section 10 Navier-Stokes Argument Does Not Establish Fefferman (C) or (D)"
 authors:
   - family-names: Frohman
     given-names: "Benjamin Stanley"
     email: frohmanbenjamin@gmail.com
     orcid: "https://orcid.org/0009-0006-7068-3718"
-doi: 10.5281/zenodo.23940668
+doi: 10.5281/zenodo.23942334
 url: "https://github.com/BenFrohman/Clay-CD-not-certified"
 repository-code: "https://github.com/BenFrohman/Clay-CD-not-certified"
 license: Apache-2.0

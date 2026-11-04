@@ -1,6 +1,8 @@
-# Verification certificate
+# Build and axiom audit
 
-**Paper:** A Diverging History Clock Is Not a Blow-up Proof: Lean-Checked Lemmas Showing Why a Section 10 Navier-Stokes Argument Does Not Certify Fefferman (C) or (D)
+This is a build and axiom audit, not a certificate or peer review.
+
+**Paper:** A Diverging History Clock Is Not a Blow-up Proof: Lean-Checked Lemmas Showing Why a Section 10 Navier-Stokes Argument Does Not Establish Fefferman (C) or (D)
 **Author:** Benjamin Stanley Frohman (frohmanbenjamin@gmail.com)
 **PDF:** `paper/Clay_CD_not_certified_2026.pdf`
 
