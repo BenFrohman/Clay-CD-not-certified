@@ -6,10 +6,10 @@ authors:
     given-names: "Benjamin Stanley"
     email: frohmanbenjamin@gmail.com
     orcid: "https://orcid.org/0009-0006-7068-3718"
-doi: 10.5281/zenodo.23942334
+doi: 10.5281/zenodo.23959184
 url: "https://github.com/BenFrohman/Clay-CD-not-certified"
 repository-code: "https://github.com/BenFrohman/Clay-CD-not-certified"
 license: Apache-2.0
 copyright: "Copyright (c) 2026 Benjamin Stanley Frohman"
 date-released: "2026-11-04"
-version: "2.0.0"
+version: "2.1.0"
