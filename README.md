@@ -1,10 +1,10 @@
 # Clay-CD-not-certified
 
-[![Lean certificate](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/certify.yml/badge.svg?branch=main)](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/certify.yml)
+[![Lean build and axiom audit (print-axioms table)](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/axiom-table.yml/badge.svg?branch=main)](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/axiom-table.yml)
 [![Lean 4](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/lean.yml)
 
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23653015.svg)](https://doi.org/10.5281/zenodo.23653015) [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23940668.svg)](https://doi.org/10.5281/zenodo.23940668) [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 Author: Benjamin Stanley Frohman
 Copyright (c) 2026 Benjamin Stanley Frohman
@@ -21,7 +21,7 @@ Forced (C) and (D) are a different statement. An external claim exists in openai
 ---
 ## Archival DOI & Cryptographic Provenance
 
-- **Zenodo DOI (v1.0.0):** [10.5281/zenodo.23653015](https://doi.org/10.5281/zenodo.23653015)
+- **Zenodo DOI (this version):** [10.5281/zenodo.23940668](https://doi.org/10.5281/zenodo.23940668); concept DOI (all versions) [10.5281/zenodo.23653014](https://doi.org/10.5281/zenodo.23653014)
 - **Author:** Benjamin Stanley Frohman (ORCID: [0009-0006-7068-3718](https://orcid.org/0009-0006-7068-3718))
 - **License:** Apache License, Version 2.0 (`Copyright (c) 2026 Benjamin Stanley Frohman`)
 - **Earliest Commit Provenance:** `bf14a32b0944c88da889ce99ceaee2901df53802` (2026-10-07 07:27:11 AM CDT (UTC-5))
