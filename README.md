@@ -1,6 +1,8 @@
 # Clay-CD-not-certified
 
-[![lean.yml](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/lean.yml)
+[![Lean certificate](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/certify.yml/badge.svg?branch=main)](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/certify.yml)
+[![Lean 4](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/BenFrohman/Clay-CD-not-certified/actions/workflows/lean.yml)
+
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23653015.svg)](https://doi.org/10.5281/zenodo.23653015) [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
