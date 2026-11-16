@@ -1,5 +1,13 @@
 /-
-Copyright (c) 2026 Benjamin Stanley Frohman. Apache-2.0.
+Copyright (c) 2026 Benjamin Stanley Frohman. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Benjamin Stanley Frohman
+-/
+
+import Mathlib
+
+/-!
+# lean.BKMCalculus
 
 Genuine (non-definitional) real-analysis lemmas about the scalar BKM bookkeeping.
 Here `f : ℝ → ℝ` is an arbitrary scalar function standing in for `t ↦ ‖ω(t)‖_∞`.
@@ -7,7 +15,6 @@ No Navier–Stokes or Euler equation is formalized; the Beale–Kato–Majda the
 NOT formalized. These lemmas only concern integrals of real functions of time.
 This does not prove or disprove Fefferman (C) or (D).
 -/
-import Mathlib
 
 open MeasureTheory intervalIntegral Filter Set
 
